@@ -1,0 +1,128 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+.top_section{
+
+    margin: 25px;
+
+    border-bottom: 1px solid black;
+
+}
+
+.buttons{
+
+    text-align: right;
+
+}
+
+.buttons button{
+
+    margin: 5px;
+
+}
+
+
+
+.products_container {
+
+    position: relative;
+
+    min-height: 78vh;
+
+}
+
+.col-2 p{
+
+    text-align: center;
+
+    font-weight: 600;
+
+
+
+}
+
+.col-2 {
+
+    margin: 4.16666667%;
+    border: 1px solid #909090;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0px #bbbbbb;
+
+    
+
+}
+
+
+.footer p{
+
+    width: 100%;
+
+    padding-top: 15px;
+
+    text-align: center;
+
+    border-top: 1px solid;
+
+}
+
+
+
+
+
+#product_form .label{
+
+    width: 70px;
+
+}
+
+
+
+#Furniture{
+
+    display: none;
+
+}
+
+#Book{
+
+    display: none;
+
+}
+
+#DVD{
+
+    display: none;
+
+}
+
+.justify-content-between{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control {
+    width: auto !important;
+    display: inline !important;
+}
+.form-select {
+    width: auto !important;
+    display: inline !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .buttons {
+      text-align: center;
+    }
+    
+    .col-2 {
+        width: 45% !important;
+        margin: 2.5%;
+        border: 1px solid #909090;
+        border-radius: 5px;
+        box-shadow: 0 0 3px 0px #bbbbbb;
+    
+        
+    
+    }
+  }
