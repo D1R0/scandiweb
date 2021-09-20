@@ -1,7 +1,12 @@
 <?php
-define("DB_HOST","remotemysql.com");
-define("DB_USER","oCRmx8aH4b");
-define("DB_PASS","d0HQSSppnF");
-define("DB_NAME","oCRmx8aH4b");
+
+define("DB_HOST","localhost");
+
+define("DB_USER","eltandco_python");
+
+define("DB_PASS","@H:wCj9c6Qd2B7");
+
+define("DB_NAME","eltandco_scandiweb");
+
 
 ?>
