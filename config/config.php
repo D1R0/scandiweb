@@ -2,11 +2,11 @@
 
 define("DB_HOST","localhost");
 
-define("DB_USER","eltandco_python");
+define("DB_USER","user");
 
-define("DB_PASS","@H:wCj9c6Qd2B7");
+define("DB_PASS","password");
 
-define("DB_NAME","eltandco_scandiweb");
+define("DB_NAME","db_name");
 
 
 ?>
