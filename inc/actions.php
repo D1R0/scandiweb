@@ -5,31 +5,30 @@ if (isset($_POST['cancel'])) {
     header("location: ../index.php");
 }
 elseif (isset($_POST['save'])) {
-
-    $product->sku=$_POST['sku'];
-    $product->name=$_POST['name'];
-    $product->price=$_POST['price'];
-    $product->type=$_POST['type'];
-    if(empty($product->sku) || empty($product->name) || empty($product->price)){
-        header("location: ../addproduct.php?the&fields&is&empty");
-    }
-    if($product->type=="DVD"){
-        $product->specific_attribute="SIZE: ".$_POST["size"]." MB";
-        $product->addproduct($product->sku,$product->name,$product->price,$product->type,$product->specific_attribute);
-        header("location: ../index.php");
-    }
-    if($product->type=="Furniture"){
-        $product->specific_attribute=$_POST["height"]."x".$_POST["width"]."x".$_POST["lenght"];
-        $product->addproduct($product->sku,$product->name,$product->price,$product->type,$product->specific_attribute);
-        header("location: ../index.php");
-       
-    }
-    if($product->type=="Book"){
-        $product->specific_attribute="Weight ".$_POST["weight_book"]."KG";
-        $product->addproduct($product->sku,$product->name,$product->price,$product->type,$product->specific_attribute);
-        header("location: ../index.php");
-       
-    }
+    switch($product){
+        case strlen($_POST['sku'])==0:
+            header("location: ../addproduct.php?sku=empty");
+            break;
+        case strlen($_POST['name'])==0:
+            header("location: ../addproduct.php?name=empty");
+            break;
+        case strlen(strval($_POST['price']))==0:
+            header("location: ../addproduct.php?price=empty");
+            break;
+        case $_POST['type']=="DVD":
+            $product->dvd=new DVD($_POST);
+            $product->dvd->addproduct($product->dvd->input);
+            break;
+        case $_POST['type']=="Furniture":
+            $product->furniture=new Furniture($_POST);
+            $product->furniture->addproduct($product->furniture->input);
+            break;
+        case $_POST['type']=="Book":
+            $product->book=new Book($_POST);
+            $product->book->addproduct($product->book->input);
+            break;
+    }   
+    
 }
 elseif (isset($_POST['add'])) {
     header("location: ../addproduct.php");

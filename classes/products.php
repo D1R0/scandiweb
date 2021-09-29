@@ -3,7 +3,7 @@
     include_once ($filedir."/../lib/database.php");
     
     abstract class actions{
-        abstract public function addproduct($sku,$name,$price,$type,$type_specific_attribute);
+        abstract public function addproduct($input);
 
         abstract public function delproduct($id);
 
@@ -12,7 +12,7 @@
 
     class Product extends actions{
 
-        private $db;
+        protected $db;
 
         private $data = array();
  
@@ -32,9 +32,15 @@
             $this->db=new Database();
         }
 
-        public function addproduct($sku,$name,$price,$type,$type_specific_attribute){
-            $sql="INSERT INTO products (sku,name,price,type,data_by_type) VALUES ('$sku','$name','$price','$type','$type_specific_attribute')";
-            $this->db->insert($sql);
+        public function addproduct($input){
+            if($input['exist']){
+                header("location: ../addproduct.php?product=exist&".$input['sku']);
+            } else {
+                $sql="INSERT INTO products (sku,name,price,type,data_by_type) VALUES ('".$input["sku"]."','".$input["name"]."','".$input["price"]."','".$input["type"]."','".$input["attr"]."')";
+                $this->db->insert($sql);
+                header("location: ../index.php");
+
+            }
 
         }
 

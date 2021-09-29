@@ -6,7 +6,6 @@
 <?php 
 $title="Add Product";
 include "inc/head.php"?>
-<?php include "inc/actions.php"?>
 
 
 <body>

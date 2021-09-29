@@ -4,12 +4,13 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 include "classes/products.php";
-
+include "inc/loader.php";
 $filedir = realpath(dirname(__FILE__));
 include_once ($filedir."/../lib/database.php");
 include_once ($filedir."/../classes/products.php");
-
 $product=new Product;
+include "inc/actions.php";
+
 
 ?>
 <head>
