@@ -27,7 +27,7 @@ body {
 
     position: relative;
 
-    min-height: 78vh;
+    min-height: 76vh;
 
 }
 
@@ -52,6 +52,9 @@ body {
 
 }
 
+.box label {
+    display: block;
+}
 
 .footer p{
 
@@ -121,8 +124,12 @@ body {
         border: 1px solid #909090;
         border-radius: 5px;
         box-shadow: 0 0 3px 0px #bbbbbb;
+    }
+    .products_container {
+
+        position: relative;
     
-        
+        min-height: 69vh;
     
     }
   }
